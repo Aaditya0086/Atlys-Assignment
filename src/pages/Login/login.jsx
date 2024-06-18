@@ -1,10 +1,11 @@
 import React from 'react'
+import { Box } from '@mui/material';
 
 const Login = () => {
   return (
-    <div>
+    <Box sx={{color: 'red'}}>
       hello login
-    </div>
+    </Box>
   )
 }
 
