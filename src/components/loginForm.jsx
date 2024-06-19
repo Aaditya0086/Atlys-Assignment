@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Box, Typography, Button, Link, IconButton, InputAdornment } from '@mui/material';
+import { Container, Box, Typography, Button, Link, IconButton } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import axios from 'axios';
 
@@ -102,7 +102,7 @@ const LoginForm = ({handleLogin}) => {
             </IconButton>
           </Box>
           
-          <Button variant="contained" onClick={handleLoginBtn} fullWidth sx={{ mt: 3, bgcolor: '#4a96ff', color: 'white', ':hover': { bgcolor: '#0056b3' } }}>
+          <Button variant="contained" onClick={handleLoginBtn} fullWidth sx={{ mt: 3, bgcolor: '#4a96ff', textTransform: 'none', fontSize: '16px', letterSpacing: '0.75px', color: 'white', ':hover': { bgcolor: '#0056b3' } }}>
             Login now
           </Button>
           <Typography variant="body2" align="left" sx={{ mt: 1.5, color: '#aaaaaa', width: '100%' }}>
