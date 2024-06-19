@@ -3,7 +3,7 @@ import { Container, Box, Typography, Button, Link, IconButton } from '@mui/mater
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import axios from 'axios';
 
-const RegisterForm = ({handleRegister}) => {
+const RegisterForm = ({handleRegister, onLoginClick}) => {
 
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState('');
@@ -32,7 +32,7 @@ const RegisterForm = ({handleRegister}) => {
   };
 
   return (
-    <Box sx={{ bgcolor: '#27292d', color: 'white', padding: '40px 30px', borderRadius: '8px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', minWidth: '400px', border: '2px solid grey' }}>
+    <Box sx={{ bgcolor: '#27292d', color: 'white', padding: '40px 30px', borderRadius: '12px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', minWidth: '400px', border: '2px solid #8d8d8d' }}>
       <Container sx={{ px: '0 !important' }}>
         <Box sx={{ width: '100%', bgcolor: '#27292d', borderRadius: '8px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <Typography variant='text' align="center" gutterBottom sx={{ fontWeight: 'normal', color: 'grey', fontSize: '14px', letterSpacing: '0.75px' }}>
@@ -129,7 +129,7 @@ const RegisterForm = ({handleRegister}) => {
           <Button variant="contained" onClick={handleRegisterBtn} fullWidth sx={{ mt: 3, bgcolor: '#4a96ff', textTransform: 'none', fontSize: '16px', letterSpacing: '0.75px', color: 'white', ':hover': { bgcolor: '#0056b3' } }}>
             Continue
           </Button>
-          <Typography variant="body2" align="left" sx={{ mt: 1.5, color: '#aaaaaa', width: '100%' }}>Already have an account? <Link href="#" variant="body2" sx={{ color: 'white', fontWeight: 'bold' }}>Login</Link> →
+          <Typography variant="body2" align="left" sx={{ mt: 1.5, color: '#aaaaaa', width: '100%' }}>Already have an account? <Link onClick={onLoginClick} variant="body2" sx={{ color: 'white', fontWeight: 'bold', cursor: 'pointer'  }}>Login</Link> →
           </Typography>
         </Box>
       </Container>
