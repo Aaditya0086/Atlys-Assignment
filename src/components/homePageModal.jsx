@@ -3,8 +3,8 @@ import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
-import IconButton from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
 import LoginForm from "./loginForm";
 import RegisterForm from "./registerForm";
 
@@ -18,8 +18,13 @@ const style = {
   boxShadow: 24,
 };
 
-const HomePageModal = ({ open, handleClose, showRegister, handleShowLogin, handleShowRegister }) => {
-
+const HomePageModal = ({
+  open,
+  handleClose,
+  showRegister,
+  handleShowLogin,
+  handleShowRegister,
+}) => {
   const handleLogin = () => {
     handleClose();
   };
@@ -45,15 +50,37 @@ const HomePageModal = ({ open, handleClose, showRegister, handleShowLogin, handl
       >
         <Fade in={open}>
           <Box sx={style}>
-            <Box sx={{ display: 'flex', justifyContent: 'flex-end', position: 'absolute', top: '20px', right: '20px',  }}>
-              <IconButton onClick={handleClose} sx={{color: '#fff', borderRadius: '50%', backgroundColor: '#131319', '&:hover': {backgroundColor: "#131319"}, }}>
-                <CloseIcon sx={{fontWeight: 'normal', fontSize: '18px'}} />
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "flex-end",
+                position: "absolute",
+                top: "20px",
+                right: "20px",
+              }}
+            >
+              <IconButton
+                onClick={handleClose}
+                sx={{
+                  color: "#fff",
+                  borderRadius: "50%",
+                  backgroundColor: "#131319",
+                  "&:hover": { backgroundColor: "#131319" },
+                }}
+              >
+                <CloseIcon sx={{ fontWeight: "normal", fontSize: "18px" }} />
               </IconButton>
             </Box>
             {showRegister ? (
-              <RegisterForm onLoginClick={handleShowLogin} handleRegister={handleRegister} />
+              <RegisterForm
+                onLoginClick={handleShowLogin}
+                handleRegister={handleRegister}
+              />
             ) : (
-              <LoginForm onRegisterClick={handleShowRegister} handleLogin={handleLogin} />
+              <LoginForm
+                onRegisterClick={handleShowRegister}
+                handleLogin={handleLogin}
+              />
             )}
           </Box>
         </Fade>
