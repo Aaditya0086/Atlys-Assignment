@@ -3,7 +3,7 @@ import { Container, Box, Typography, Button, Link, IconButton } from '@mui/mater
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import axios from 'axios';
 
-const LoginForm = ({handleLogin}) => {
+const LoginForm = ({handleLogin, onRegisterClick}) => {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -29,7 +29,7 @@ const LoginForm = ({handleLogin}) => {
   };
 
   return (
-    <Box sx={{ bgcolor: '#27292d', color: 'white', padding: '40px 30px', borderRadius: '8px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', minWidth: '400px', border: '2px solid grey' }}>
+    <Box sx={{ bgcolor: '#27292d', color: 'white', padding: '40px 30px', borderRadius: '12px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', minWidth: '400px', border: '2px solid #8d8d8d' }}>
       <Container sx={{ px: '0 !important' }}>
         <Box sx={{ width: '100%', bgcolor: '#27292d', borderRadius: '8px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <Typography variant='text' align="center" gutterBottom sx={{ fontWeight: 'normal', color: 'grey', fontSize: '14px', letterSpacing: '0.75px' }}>
@@ -106,7 +106,7 @@ const LoginForm = ({handleLogin}) => {
             Login now
           </Button>
           <Typography variant="body2" align="left" sx={{ mt: 1.5, color: '#aaaaaa', width: '100%' }}>
-            Not registered yet? <Link href="#" variant="body2" sx={{ color: 'white', fontWeight: 'bold' }}>Register</Link> →
+            Not registered yet? <Link onClick={onRegisterClick} variant="body2" sx={{ color: 'white', fontWeight: 'bold', cursor: 'pointer' }}>Register</Link> →
           </Typography>
         </Box>
       </Container>
